@@ -5,9 +5,11 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+application-data.yml
+
 ### STS ###
 .apt_generated
-.classpath
+.classpathg
 .factorypath
 .project
 .settings

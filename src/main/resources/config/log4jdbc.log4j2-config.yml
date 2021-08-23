@@ -1,0 +1,27 @@
+log4jdbc:
+    spylogdelegator:
+        name: net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator
+    drivers: com.mysql.cj.jdbc.Driver
+    auto:
+        load:
+            popular:
+                drivers: false
+
+logging:
+  level:
+    javax:
+      sql:
+        DataSource: OFF
+    jdbc:
+      audit: OFF
+      resultset: OFF
+      resultsettable: INFO
+      sqlonly: DEBUG
+      sqltiming: OFF
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE

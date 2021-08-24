@@ -1,12 +1,12 @@
+spring:
+  config:
+    activate:
+      on-profile: "logging"
 log4jdbc:
     spylogdelegator:
-        name: net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator
+      name: net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator
     drivers: com.mysql.cj.jdbc.Driver
-    auto:
-        load:
-            popular:
-                drivers: false
-
+    auto.load.popular.drivers: false
 logging:
   level:
     javax:

@@ -1,10 +1,13 @@
 spring:
   profiles:
     group:
-      default: "default"
-      real : "real,real-db"
+      default: "default,logging"
+      real : "real,real-db,logging"
   config:
-    import: classpath:application-data.yml
+    import:
+      - classpath:application-data.yml
+      - classpath:config/logging-config.yml
+
 ---
 spring:
   config:
@@ -17,5 +20,13 @@ spring:
   config:
     activate:
       on-profile: real
+log4jdbc:
+  spylogdelegator:
+    name: net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator
+  drivers: com.mysql.cj.jdbc.Driver
+  auto:
+    load:
+      popular:
+        drivers: false
 server:
   port: 8080
